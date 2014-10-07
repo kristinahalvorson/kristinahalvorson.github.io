@@ -1,0 +1,15 @@
+Set up Mandrill
+Outline Header text
+Replace social links in footer
+Get Stina's photo
+Fix Stina Picture for smaller page layouts
+
+Remove unnecessary js files
+
+Set up domain
+Replace email target
+set up domain mx
+Set up CNAME
+Add DNS with namecheap
+
+Migrate to Stina's github?
