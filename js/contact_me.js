@@ -18,15 +18,25 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: "https://mandrillapp.com/api/1.0/messages/send.json",
                 type: "POST",
                 data: {
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    message: message
+                    "key": "ZPVrwY5OJKmKa3sHE6yRzw",
+                    "message": {
+                        "text": message + "\n\nPhone: " + phone,
+                        "subject": "New Student Inquiry",
+                        "from_email": email,
+                        "from_name": name,
+                        "to": [{
+                            "email": "kristina@halvorsonsmusic.com",
+                            "name": "Kristina Halvorson",
+                            "type": "to"
+                        }],
+                        "headers": {
+                            "Reply-To": email
+                        }
+                    }
                 },
-                cache: false,
                 success: function() {
                     // Success message
                     $('#success').html("<div class='alert alert-success'>");
